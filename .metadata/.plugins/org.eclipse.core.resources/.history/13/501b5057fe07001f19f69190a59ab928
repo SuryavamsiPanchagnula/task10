@@ -67,39 +67,27 @@ public class Account {
 		}	
 		
 		System.out.println("Please give amount details of another account");
-		
 		int amount3= sc.nextInt();
-		
 		Account a = new Account(amount3, sc);
 		
 		System.out.println("Choose to withdraw or deposit");
-		
 		String choice2 = sc.next();
-		
 		switch (choice2) {
-		
         case "withdraw":
-        	
             System.out.print("Enter amount to withdraw: ");
             int amountToWithdraw = sc.nextInt();
             Account.withdraw(amountToWithdraw);
             System.out.println("The amount after withdraw: " + Account.balance);
-            
             break;
         case "deposit":
-        	
             System.out.print("Enter amount to deposit: ");
             int amountToDeposit = sc.nextInt();
             Account.deposit(amountToDeposit);
             System.out.println("The amount after deposit: " + Account.balance);
-            
             break;
         default:
-        	
             System.out.println("Invalid choice");
-            
             break;
-
     }
 		
 	}
