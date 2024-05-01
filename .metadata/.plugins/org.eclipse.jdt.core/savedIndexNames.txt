@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\Admin\task10\.metadata\.plugins\org.eclipse.jdt.core
+2423542074.index
+1865797976.index
+3413270776.index
