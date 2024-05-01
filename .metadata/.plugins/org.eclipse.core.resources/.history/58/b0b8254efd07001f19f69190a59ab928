@@ -5,7 +5,7 @@ public class Account {
 	private static int balance;
 	static Scanner sc = new Scanner(System.in);
 	private int intAmount;
-	private final Scanner scanner;
+	private final static Scanner scanner;
 	
 	public Account(){
 		this.scanner = null;
@@ -50,7 +50,6 @@ public class Account {
 			
 		case "deposit":
 			
-			System.out.println("How much to deposit?");
             int amount2 = sc.nextInt();
 			
             deposit(amount2);
@@ -68,11 +67,9 @@ public class Account {
 		
 		System.out.println("Please give amount details of another account");
 		int amount3= sc.nextInt();
-		Account a = new Account(amount3, sc);
+		Account a = new Account(amount3,scanner);
 		
-		System.out.println("Choose to withdraw or deposit");
-		String choice2 = sc.next();
-		switch (choice2) {
+		switch (choice) {
         case "withdraw":
             System.out.print("Enter amount to withdraw: ");
             int amountToWithdraw = sc.nextInt();

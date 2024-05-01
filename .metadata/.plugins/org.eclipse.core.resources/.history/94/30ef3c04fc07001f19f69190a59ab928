@@ -12,7 +12,7 @@ public class circle {
 	public circle(double radius,double pi) {
 		
 		this.radius=radius;
-		this.pi=pi;
+		this.pi=pi;;
 	}
 	
 	public double getCircumfence() {

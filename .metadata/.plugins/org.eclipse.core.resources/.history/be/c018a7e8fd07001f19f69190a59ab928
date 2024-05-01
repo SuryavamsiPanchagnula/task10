@@ -69,8 +69,6 @@ public class Account {
 		System.out.println("Please give amount details of another account");
 		int amount3= sc.nextInt();
 		Account a = new Account(amount3, sc);
-		
-		System.out.println("Choose to withdraw or deposit");
 		String choice2 = sc.next();
 		switch (choice2) {
         case "withdraw":

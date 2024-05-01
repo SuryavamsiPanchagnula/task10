@@ -70,9 +70,7 @@ public class Account {
 		int amount3= sc.nextInt();
 		Account a = new Account(amount3, sc);
 		
-		System.out.println("Choose to withdraw or deposit");
-		String choice2 = sc.next();
-		switch (choice2) {
+		switch (choice) {
         case "withdraw":
             System.out.print("Enter amount to withdraw: ");
             int amountToWithdraw = sc.nextInt();
