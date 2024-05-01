@@ -1,0 +1,53 @@
+package task10;
+import java.util.*;
+public class Account {
+	
+	private static int balance;
+	static Scanner sc = new Scanner(System.in);
+	
+	public Account() {
+		this.balance=sc.nextInt();
+		System.out.println("Initial Amount :"+balance);
+	}
+	
+	public static void main(String args[]) {
+		
+		Account b = new Account();
+		
+		System.out.println("Choose to withdraw or deposit");
+		
+		String choice = sc.nextLine();
+		
+		switch(choice) {
+		
+		case "withdraw":
+			
+			System.out.println("How much to withdraw?");
+			
+			int amount = sc.nextInt();
+			
+			int tot_balance = balance - amount;
+			
+			System.out.println("Amount After deposit: "+tot_balance);
+			
+			break;
+			
+		case "deposit":
+			
+            int amount2 = sc.nextInt();
+			
+			int tot_balance2 = balance + amount2;
+			
+			System.out.println("Amount After deposit: "+tot_balance2);
+			
+			break;
+			
+		default:
+			
+			System.out.println("Invalid choice");
+			
+			return;
+				
+		}		
+	}
+}
