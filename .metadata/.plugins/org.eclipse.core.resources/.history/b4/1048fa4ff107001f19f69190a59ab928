@@ -1,0 +1,36 @@
+package task10;
+import java.util.*;
+public class circle {
+	Scanner sc=new Scanner(System.in);
+	private double radius;
+	private static double pi;
+	
+	public circle() {
+		this.radius=sc.nextDouble();
+	}
+	
+	public circle(double radius,double pi) {
+		
+		this.radius=sc.nextDouble();
+		this.pi=Math.PI;
+	}
+	
+	public double getPerimeterofCircle() {
+		
+		return 2*pi*radius;
+	}
+	
+	public double getCircumfence() {
+		return 2*Math.PI*radius;
+	}
+	
+	public static void main(String args[]) {
+		circle perimeter=new circle();
+		circle perimeter2 = new circle(radius, pi);
+		
+		double per2=perimeter2.getPerimeterofCircle();
+		double per =perimeter.getCircumfence();
+		
+		System.out.println(per);
+	}
+}

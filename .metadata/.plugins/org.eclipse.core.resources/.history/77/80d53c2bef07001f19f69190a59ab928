@@ -1,0 +1,27 @@
+package task10;
+import java.util.*;
+public class circle {
+	
+	private int r;
+	private float pi;
+	
+	public circle() {
+		
+		this.r=22;
+		this.pi=(float) 3.14;
+		
+	}
+	
+	public void circumfence() {
+		
+		circle perimeter=new circle();
+	}
+	
+	public static void main(String args[]) {
+		
+		circle obj = new circle();
+		
+		obj.circumfence();
+		
+	}
+}

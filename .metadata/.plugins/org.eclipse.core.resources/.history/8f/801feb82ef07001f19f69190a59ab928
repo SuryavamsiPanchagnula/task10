@@ -1,0 +1,21 @@
+package task10;
+import java.util.*;
+public class circle {
+	private double radius;
+	
+	public circle() {
+		this.radius=22;
+	}
+	
+	public double getCircumfence() {
+		return 2*Math.PI*radius;
+	}
+	
+	public static void main(String args[]) {
+		circle perimeter=new circle();
+		
+		double per =perimeter.getCircumfence();
+		
+		System.out.println(per);
+	}
+}
