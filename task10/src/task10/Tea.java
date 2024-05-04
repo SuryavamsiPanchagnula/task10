@@ -1,0 +1,64 @@
+package task10;
+import java.util.*;
+public class Tea {
+static Scanner sc = new Scanner(System.in);
+private float hot_water;
+private float milk;
+	public void prepareTea() {
+		
+		int leaves;
+		System.out.println("Enter the required hot water(in ml)");
+		hot_water=sc.nextFloat();
+		System.out.println("Enter number of leaves to be added");
+		leaves=sc.nextInt();
+	}
+	
+	public void addMilk() {
+	
+		int ratio;
+		System.out.println("Enter the ratio of milk with respect to water");
+		ratio = sc.nextInt();
+		
+		if(ratio<1) {
+			System.out.println("Invalid ratio");
+			System.exit(0);
+		}
+		
+		switch(ratio) {
+		
+		case 1 :
+			milk = hot_water;
+			System.out.println("Milk required: "+milk);
+			break;
+		case 2:
+			milk = 2*hot_water;
+			System.out.println("Milk Required: "+milk+"ml");
+			break;
+		default:
+			System.out.println("Tea essence is lost");
+			return;
+		}
+	}
+		
+		public void addSugar() {
+			
+			if(milk == 0) {
+				System.out.println("Sugar cannot be added");
+			}
+			int cups;
+			
+			cups = (int) hot_water/200;
+			System.out.println("Number of spoons for sugar: "+cups);
+		}
+		public static void main(String args[]) {
+			
+			Tea obj = new Tea();
+			
+			obj.prepareTea();
+			obj.addMilk();
+			obj.addSugar();
+		}
+		
+		
+		
+	}
