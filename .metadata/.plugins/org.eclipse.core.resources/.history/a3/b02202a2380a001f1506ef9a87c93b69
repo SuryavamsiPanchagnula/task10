@@ -47,13 +47,13 @@ public class Employee {
 		this.salary=salary;
 	}
 	
-	public double getAnnualSalary() {
-		return (double) (salary*12);
+	public int getAnnualSalary() {
+		return (int) (salary*12);
 	}
 	
-	public void raiseSalary(int percent) {
-		double raise_amount=(int) (salary*(percent/100.0));
-		salary= raise_amount + salary;
+	public void raiseSalary() {
+		percent=(int) (salary*percent);
+		raise_salary= percent + salary;
 		this.percent=percent;
 		
 	}
@@ -81,6 +81,8 @@ public class Employee {
 		
 		obj.setSalary();
 		
+		
+		
 		System.out.println("Employee ID: "+obj.getID());
 		System.out.println("Employee First Name: "+obj.getFirstname());
 		System.out.println("Employee Last Name: "+obj.getLastname());
@@ -90,7 +92,7 @@ public class Employee {
 		
 		System.out.println("Enter salary raise percent: ");
 		int d = sc.nextInt();
-		obj.raiseSalary(d);
+		obj.raiseSalary();
 		
 		System.out.println("Employee details after raise");
 		

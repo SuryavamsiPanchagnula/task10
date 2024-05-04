@@ -10,7 +10,6 @@ public class Employee {
 	private static int percent;
 	static Scanner sc = new Scanner(System.in);
 	
-	
 	public Employee(int ID, String firstname , String lastname, int salary) {
 		
 		this.ID=ID;
@@ -19,24 +18,23 @@ public class Employee {
 		this.salary=salary;
 	}
 	
-	public int getID() {
+	public int getID(int ID) {
 		return ID;
 	}
 	
-	public String getFirstname() {
+	public String getFirstname(String firstname) {
 		return firstname;
 	}
 	
-	public String getLastname() {
+	public String getLastname(String lastname) {
 		return lastname;
 	}
 	
-	public String getName() {
-		name = firstname+" "+lastname;
+	public String getName(String name) {
 		return name;
 	}
 	
-	public double getSalary() {
+	public int getSalary(int salary) {
 		return salary;
 	}
 	
@@ -47,13 +45,13 @@ public class Employee {
 		this.salary=salary;
 	}
 	
-	public double getAnnualSalary() {
-		return (double) (salary*12);
+	public int getAnnualSalary() {
+		return (int) (salary*12);
 	}
 	
 	public void raiseSalary(int percent) {
-		double raise_amount=(int) (salary*(percent/100.0));
-		salary= raise_amount + salary;
+		percent=(int) (salary*percent);
+		salary= percent + salary;
 		this.percent=percent;
 		
 	}
@@ -69,7 +67,6 @@ public class Employee {
 		System.out.println("Enter Employee ID:");
 		int id = sc.nextInt();
 		obj.ID= id;
-	
 		
 		System.out.println("Enter Employee firstname: ");
 		String a = sc.next();
@@ -81,18 +78,17 @@ public class Employee {
 		
 		obj.setSalary();
 		
-		System.out.println("Employee ID: "+obj.getID());
-		System.out.println("Employee First Name: "+obj.getFirstname());
-		System.out.println("Employee Last Name: "+obj.getLastname());
-		System.out.println("Employee Name: "+obj.getName());
-		System.out.println("Employee Salary: "+obj.getSalary());
+		System.out.println(obj);
+		
+		
+		
 		System.out.println("Annual Salary: "+obj.getAnnualSalary());
 		
 		System.out.println("Enter salary raise percent: ");
 		int d = sc.nextInt();
 		obj.raiseSalary(d);
 		
-		System.out.println("Employee details after raise");
+		System.out.println("Employee detials after raise");
 		
 		System.out.println(obj.toString());
 		}
