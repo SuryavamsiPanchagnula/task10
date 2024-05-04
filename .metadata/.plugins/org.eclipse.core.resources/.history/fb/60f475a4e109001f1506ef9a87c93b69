@@ -1,0 +1,64 @@
+package task10;
+import java.util.*;
+public class Employee {
+
+	private static int ID;
+	private static String name;
+	private static double salary;
+	private String firstname;
+	private String lastname;
+	private static int percent;
+	Scanner sc = new Scanner(System.in);
+	
+	public Employee(int ID, String firstname , String lastname, int salary) {
+		
+		this.ID=ID;
+		this.firstname=firstname;
+		this.lastname=lastname;
+		this.salary=salary;
+	}
+	
+	public int getID(int ID) {
+		return ID;
+	}
+	
+	public String getFirstname(String firstname) {
+		return firstname;
+	}
+	
+	public String getLastname(String lastname) {
+		return lastname;
+	}
+	
+	public String getName(String name) {
+		return name;
+	}
+	
+	public int getSalary(int salary) {
+		return salary;
+	}
+	
+	public void setSalary() {
+		int salary;
+		
+		salary = sc.nextInt();
+	}
+	
+	public int getAnnualSalary() {
+		return (int) (salary*12);
+	}
+	
+	public void raise_salary(int percent, int raise, int salary) {
+		this.percent=percent;
+		this.salary=salary;
+		raise= (percent*salary)+salary;
+	}
+	
+	public String toString() {
+		return "Employee [ID ="+ID+" , name ="+firstname+" , "+lastname+" , salary="+salary+"]";
+	}
+	
+	public static void main(String args[]) {
+		
+	}
+}
