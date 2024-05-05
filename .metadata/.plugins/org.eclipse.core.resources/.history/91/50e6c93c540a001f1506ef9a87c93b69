@@ -1,0 +1,94 @@
+package task10;
+import java.util.Scanner;
+
+class Tea2 {
+    Scanner sc = new Scanner(System.in);
+
+    public void water_adding() {
+        // Water Input
+        double waterAmount;
+        while (true) {
+            System.out.println("Enter amount of water (in ml): ");
+            waterAmount = sc.nextDouble();
+            if (waterAmount > 230 || waterAmount < 1) {
+                System.out.println("Invalid water amount. Please enter a value between 1 and 230.");
+                continue;
+            }
+            break;
+        }
+
+        // Sugar Input
+        boolean addSugar = false;
+        while (true) {
+            System.out.println("Confirm whether Sugar needs to be added (yes/no): ");
+            String sugarResponse = sc.next().toLowerCase();
+            if (sugarResponse.equals("yes")) {
+                addSugar = true;
+                break;
+            } else if (sugarResponse.equals("no")) {
+                break;
+            } else {
+                System.out.println("Invalid input. Please enter 'yes' or 'no'.");
+            }
+        }
+
+        // Adding Sugar
+        if (addSugar) {
+            int sugarSpoons;
+            while (true) {
+                System.out.println("Enter number of spoons of sugar to be added: ");
+                sugarSpoons = sc.nextInt();
+                if (sugarSpoons < 1) {
+                    System.out.println("Invalid sugar amount. Please enter a value greater than 0.");
+                    continue;
+                }
+                break;
+            }
+            switch (sugarSpoons) {
+                case 1:
+                    System.out.println("One spoon of sugar is added");
+                    break;
+                case 2:
+                    System.out.println("Two spoons of sugar are added");
+                    break;
+                default:
+                    System.out.println("Tea essence is lost. Adding too much sugar.");
+            }
+        } else {
+            System.out.println("Sugar will not be added.");
+        }
+
+        // Tea Leaves Input
+        int teaLeaves;
+        while (true) {
+            System.out.println("Enter number of tea leaves to be added: ");
+            teaLeaves = sc.nextInt();
+            if (teaLeaves < 1) {
+                System.out.println("Invalid number of tea leaves. Please enter a value greater than 0.");
+                continue;
+            }
+            break;
+        }
+        switch (teaLeaves) {
+            case 1:
+                System.out.println("Light Tea");
+                break;
+            case 2:
+            case 3:
+                System.out.println("Moderate Tea");
+                break;
+            case 4:
+                System.out.println("Strong Tea");
+                break;
+            default:
+                System.out.println("Tea essence is lost. Too many tea leaves.");
+        }
+    }
+}
+
+public class tea_polymorphism {
+    public static void main(String args[]) {
+        Tea2 a = new Tea2();
+        a.water_adding();
+    }
+}

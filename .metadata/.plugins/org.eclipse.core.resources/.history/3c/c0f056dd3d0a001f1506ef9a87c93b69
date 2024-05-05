@@ -1,0 +1,46 @@
+package task10;
+import java.util.*;
+
+class Tea{
+	
+	public void preparetea() {
+		
+		System.out.println("Regular Tea is made");
+	}
+	
+}
+
+class BlackTea extends Tea{
+	
+	public void preparetea() {
+		
+		System.out.println("Black tea is made");
+	}
+}
+
+class GreenTea extends Tea{
+	
+	public void preparetea() {
+		
+		System.out.println("Green Tea is made");
+	}
+}
+
+class HerbalTea extends Tea{
+	
+	public void preparetea() {
+		
+		System.out.println("Herbal Tea is made");
+	}
+}
+public class preparing_tea {
+	
+	public static void main(String args[]) {
+		
+		Tea a = new GreenTea();
+		Tea b = new BlackTea();
+		Tea c = new HerbalTea();
+		
+	}
+	
+}

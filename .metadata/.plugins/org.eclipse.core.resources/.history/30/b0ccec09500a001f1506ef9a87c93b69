@@ -1,0 +1,102 @@
+package task10;
+import java.util.*;
+
+class Tea2{
+	Scanner sc = new Scanner(System.in);
+	public void water_adding() {
+		while(true) {
+		System.out.println("Enter amount of water(in ml): ");
+		
+	    double b = sc.nextDouble();
+	    
+	    if((b>230 || b<1)) {
+	    	
+	    	System.out.println("Invalid");
+	    	 continue;
+	    }
+	    break;
+		}
+	    String sugar;
+	    System.out.println("Confirm whether Sugar needs to be added or not");
+	    sugar = sc.next();
+	   
+	    while(true) {
+	    boolean sugar_yes = sugar.equalsIgnoreCase("yes");
+	    boolean sugar_no = sugar.equalsIgnoreCase("no");
+	    
+	    
+	    if(sugar_yes) {
+	    	System.out.println("Number of spoons of sugar to be added");
+	    	int spoon = sc.nextInt();
+	    	if(spoon<1) {
+	    		System.out.println("Invalid");
+	    		continue;
+	    	}
+	    	else {
+	    	switch(spoon) {
+	    	
+	    	case 1:
+	    		System.out.println("One spoon of sugar is added");
+	    		break;
+	    	case 2:
+	    		System.out.println("two spoons are added");
+	    		break;
+	    		default:
+	    			System.out.println("Tea essence is lost");
+	    			System.exit(0);
+	    	}
+	    	}
+	    	break;
+	    	
+	    }
+	    else if(sugar_no) {
+	    	System.out.println("Sugar will be not added");
+	    	break;
+	    	
+	    }
+	    else {
+	    	
+	    	System.out.println("Invalid");
+	    	continue;
+	      }
+	    }
+	    System.out.println("Enter number of tea leaves to be added");
+	    
+	    int tea_leaves = sc.nextInt();
+	    while(true) { 
+	    if(tea_leaves<1) {
+	    	System.out.println("Invalid");
+	    	continue;
+	    }
+	    else {
+	    	switch(tea_leaves) {
+	    	case 1:
+	    		System.out.println("Light Tea");
+	    		break;
+	    	case 2:
+	    	case 3:
+	    		System.out.println("Moderate Tea");
+	    		break;
+	    	case 4:
+	    		System.out.println("Strong Tea");
+	    		break;
+	    	default:
+	    		System.out.println("Tea essence is lost");
+	    		System.exit(0);
+	    	}
+	     }
+	    break;
+	    }
+	}
+}
+
+public class tea_polymorphism {
+	
+	public static void main(String args[]) {
+		
+		Tea2 a = new Tea2();
+		
+		a.water_adding();
+	}
+}
+

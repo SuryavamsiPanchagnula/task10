@@ -1,0 +1,100 @@
+package task10;
+import java.util.*;
+
+class Tea2{
+	Scanner sc = new Scanner(System.in);
+	public void water_milk_adding() {
+		System.out.println("Enter amount of milk(in ml): ");
+		double a = sc.nextDouble();
+		
+		System.out.println("Enter amount of water(in ml): ");
+		
+	    double b = sc.nextDouble();
+	    
+	    if((a>125 || a<1) && (b>125 || b<1)) {
+	    	
+	    	System.out.println("Invalid");
+	    	return;
+	    }
+	    String sugar;
+	    System.out.println("Confirm whether Sugar needs to be added or not");
+	    sugar = sc.next();
+	    
+	    boolean sugar_yes = sugar.equalsIgnoreCase("yes");
+	    boolean sugar_no = sugar.equalsIgnoreCase("no");
+	    
+	    
+	    if(sugar_yes) {
+	    	System.out.println("Number of spoons of sugar to be added");
+	    	int spoon = sc.nextInt();
+	    	switch(spoon) {
+	    	
+	    	case 1:
+	    		System.out.println("One spoon of sugar is added");
+	    		break;
+	    	case 2:
+	    		System.out.println("two spoons are added");
+	    		break;
+	    		default:
+	    			System.out.println("Tea essence is lost");
+	    			return;
+	    	}
+	    }
+	    if(sugar_no) {
+	    	System.out.println("Sugar is not added");
+	    	
+	    }
+	    else {
+	    	
+	    	System.out.println("Invalid");
+	    	return;
+	    }
+	}
+	public void preparetea() {
+		
+		water_milk_adding();
+		
+	}
+}
+
+class BlackTea extends Tea2{
+	
+	public void preparetea() {
+		
+		water_milk_adding();
+		
+		
+	}
+}
+
+class GreenTea extends Tea2{
+	
+	public void preparetea() {
+		
+		System.out.println("Green Tea is made");
+	}
+}
+
+class HerbalTea extends Tea2{
+	
+	public void preparetea() {
+		
+		System.out.println("Herbal Tea is made");
+	}
+}
+public class tea_polymorphism {
+	
+	public static void main(String args[]) {
+		
+		Tea2 a = new GreenTea();
+		Tea2 b = new BlackTea();
+		Tea2 c = new HerbalTea();
+		
+		a.preparetea();
+		b.preparetea();
+		c.preparetea();
+		
+	}
+	
+}
+
