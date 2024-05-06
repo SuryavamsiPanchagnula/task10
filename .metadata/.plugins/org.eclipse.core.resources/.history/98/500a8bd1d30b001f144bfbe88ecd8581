@@ -1,0 +1,361 @@
+package task10;
+import java.util.*;
+
+class Tea3{
+	
+	public void prepareTea() {
+		System.out.println("Tea making");
+	}
+	static Scanner sc = new Scanner(System.in);
+	public void water_adding() {
+		  
+		while(true) {
+		System.out.println("Enter amount of water(in ml): ");
+		double b = sc.nextDouble();
+	    if((b>230 || b<200)) {
+	    	
+	    	System.out.println("Invalid, please enter again");
+	    	continue;
+	    }
+	    break;
+		}
+	   
+	    while(true) {
+	    System.out.println("Confirm whether Sugar needs to be added or not(yes/no)");
+	 	String sugar = sc.next();
+	    boolean sugar_yes = sugar.equalsIgnoreCase("yes");
+	    boolean sugar_no = sugar.equalsIgnoreCase("no");
+	    
+	    if(sugar_yes) {
+	    	while(true) {
+	    		System.out.println("Number of spoons of sugar to be added");
+	    	int spoon = sc.nextInt();
+	    	if(spoon<1) {
+	    		System.out.println("Invalid,please enter again");
+	    		continue;
+	    	}
+	    	else {
+	    	switch(spoon) {
+	    	
+	    	case 1:
+	    		System.out.println("One spoon of sugar is added");
+	    		break;
+	    	case 2:
+	    		System.out.println("two spoons are added");
+	    		break;
+	    		default:
+	    			System.out.println("Tea essence is lost");
+	    			return;
+	    	}
+	    	}
+	    	break;
+	    	
+	    }
+	    }
+	    else if(sugar_no) {
+	    	System.out.println("Sugar will be not added");
+	    }
+	    else {
+	    	
+	    	System.out.println("Invalid,please enter again");
+	    	continue;
+	      }
+	    break;
+	    }
+	    while(true) {
+	    System.out.println("Enter number of tea leaves to be added");
+	    int tea_leaves = sc.nextInt();
+	    if(tea_leaves<1) {
+	    	System.out.println("Invalid, please enter again");
+	    	continue;
+	    	
+	    }
+	    else {
+	    	switch(tea_leaves) {
+	    	case 1:
+	    		System.out.println("Light Tea");
+	    		break;
+	    	case 2:
+	    	case 3:
+	    		System.out.println("Moderate Tea");
+	    		break;
+	    	case 4:
+	    		System.out.println("Strong Tea");
+	    		break;
+	    	default:
+	    		System.out.println("Tea essence is lost");
+	    		return;
+	    	}
+	     }
+	    break;
+	    }
+	}
+}
+
+class BlackTea extends Tea3{
+	
+	public void prepareTea() {
+		water_adding();
+		while(true) {
+		System.out.println("Enter number of cinesis leaves to be added");
+		int a = sc.nextInt();
+		switch(a) {
+		
+		case 1:
+		case 2:
+		case 3:
+			System.out.println("cinesis leaves added");
+			break;
+			default:System.out.println("Black Tea essence is lost");
+			return;
+		}
+		while(true) {
+		System.out.println("Any additional ingredient required?");
+		String c = sc.next();
+		boolean c_yes= c.equalsIgnoreCase("yes");
+		boolean c_no = c.equalsIgnoreCase("no");
+		
+		if(c_yes) {
+			while(true) {
+			System.out.println("Please choose one ingredient");
+			System.out.println("1.cinnamon");
+			System.out.println("2.cardamom");
+			System.out.println("3.cloves");
+			int ingredient = sc.nextInt();
+
+			switch(ingredient) {
+			
+			case 1:
+				System.out.println("cinnamon added");
+				break;
+			case 2:
+				System.out.println("cardomom added");
+				break;
+			case 3:
+				System.out.println("cloves added");
+				break;
+				default:
+					System.out.println("Invalid option, please enter again");
+					continue;
+			}
+			break;
+			}
+		}
+		else if(c_no) {
+			System.out.println("No Additional Ingredient is added");
+			break;
+		}
+		else {
+			System.out.println("Invalid input, please enter again");
+			continue;
+		}
+		break;
+		}
+		System.out.println("Enter brewing time");
+		int b = sc.nextInt();
+		switch(b) {
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			System.out.println("Black Tea is ready");
+			break;
+			default:
+				System.out.println("Black Tea essence is lost");
+				return;
+		}
+		break;
+		}
+	}	
+}
+
+class GreenTea extends Tea3{
+	
+	public void prepareTea() {
+		water_adding();
+		while(true) {
+		System.out.println("Enter number of green leaves to be added");
+		int a = sc.nextInt();
+		switch(a) {
+		
+		case 1:
+		case 2:
+		case 3:
+			System.out.println("green leaves added");
+			break;
+			default:System.out.println("Green Tea essence is lost");
+			return;
+		}
+		while(true) {
+		System.out.println("Any additional ingredient required?");
+		String c = sc.next();
+		boolean c_yes= c.equalsIgnoreCase("yes");
+		boolean c_no = c.equalsIgnoreCase("no");
+		
+		if(c_yes) {
+			while(true) {
+			System.out.println("Please choose one ingredient");
+			System.out.println("1.lemon");
+			System.out.println("2.mint");
+			System.out.println("3.ginger");
+			int ingredient = sc.nextInt();
+
+			switch(ingredient) {
+			
+			case 1:
+				System.out.println("lemon added");
+				break;
+			case 2:
+				System.out.println("mint added");
+				break;
+			case 3:
+				System.out.println("ginger added");
+				break;
+				default:
+					System.out.println("Invalid option, please enter again");
+					continue;
+			}
+			break;
+			}
+		}
+		else if(c_no) {
+			System.out.println("No Additional Ingredient is added");
+			break;
+		}
+		else {
+			System.out.println("Invalid input, please enter again");
+			continue;
+		}
+		break;
+		}
+		System.out.println("Enter brewing time");
+		int b = sc.nextInt();
+		switch(b) {
+		case 1:
+		case 2:
+		case 3:
+			System.out.println("Green Tea is ready");
+			break;
+			default:
+				System.out.println("Green Tea essence is lost");
+				return;
+		}
+		break;
+		}
+	}	
+}
+
+class HerbalTea extends Tea3{
+	
+	
+	public void prepareTea() {
+		water_adding();
+		while(true) {
+		System.out.println("Enter number of dried herbs to be added");
+		int a = sc.nextInt();
+		switch(a) {
+		
+		case 1:
+		case 2:
+		case 3:
+			System.out.println("dried herbs added");
+			break;
+			default:System.out.println("Green Tea essence is lost");
+			return;
+		}
+		while(true) {
+		System.out.println("Any additional ingredient required?");
+		String c = sc.next();
+		boolean c_yes= c.equalsIgnoreCase("yes");
+		boolean c_no = c.equalsIgnoreCase("no");
+		
+		if(c_yes) {
+			while(true) {
+			System.out.println("Please choose one ingredient");
+			System.out.println("1.Honey");
+			System.out.println("2.Herbal Masala");
+			System.out.println("3.Ginger");
+			int ingredient = sc.nextInt();
+
+			switch(ingredient) {
+			
+			case 1:
+				System.out.println("Honey added");
+				break;
+			case 2:
+				System.out.println("Herbal Masala added");
+				break;
+			case 3:
+				System.out.println("Ginger added");
+				break;
+				default:
+					System.out.println("Invalid option, please enter again");
+					continue;
+			}
+			break;
+			}
+		}
+		else if(c_no) {
+			System.out.println("No Additional Ingredient is added");
+			break;
+		}
+		else {
+			System.out.println("Invalid input, please enter again");
+			continue;
+		}
+		break;
+		}
+		System.out.println("Enter brewing time");
+		int b = sc.nextInt();
+		switch(b) {
+		case 1:
+		case 2:
+		case 3:
+			System.out.println("Herbal Tea is ready");
+			break;
+			default:
+				System.out.println("Herbal Tea essence is lost");
+				return;
+		}
+		break;
+		}
+	}	
+	
+}
+public class array_polymorphism {
+	
+	public static void main(String args[]) {
+		Scanner scan = new Scanner(System.in);
+		BlackTea a = new BlackTea();
+		GreenTea b = new GreenTea();
+		HerbalTea c = new HerbalTea();
+		
+		System.out.println("Choose type of tea to drink");
+		System.out.println("1.BlackTea");
+		System.out.println("2.GreenTea");
+		System.out.println("3.HerbalTea");
+		
+		while(true) {
+		int s = scan.nextInt();
+		
+		switch(s) {
+		case 1:
+			a.prepareTea();
+			break;
+		case 2:
+			b.prepareTea();
+			break;
+		case 3:
+			c.prepareTea();
+			break;
+			default:
+				System.out.println("Invalid option, please enter again");
+				continue;
+		}
+		break;
+		}
+		
+	}
+}
+
